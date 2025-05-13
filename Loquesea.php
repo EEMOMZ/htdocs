@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     }
 }
 
+//Comeme el manjar
 // Manejar la descarga del XML
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['download_xml'])) {
     header('Content-Type: text/xml');
