@@ -14,13 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
             VALUES ('$nombre', '$apellidos', '$correo', '$fecha_nacimiento', '$genero')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<p>Datos insertados correctamente.</p>";
+        $mensaje = "Datos insertados correctamente.";
     } else {
-        echo "<p>Error al insertar datos: " . $conn->error . "</p>";
+        $mensaje = "Error al insertar datos: " . $conn->error;
     }
 }
 
-//Comeme el manjar
 // Manejar la descarga del XML
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['download_xml'])) {
     header('Content-Type: text/xml');
@@ -55,13 +54,22 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="estilo.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilo.css">
+
+   
     <title>Formulario de Usuarios</title>
 </head>
 <body>
     <h1>Formulario de Usuarios</h1>
+    <?php
+    // Mostrar mensajes de inserción
+    if (isset($mensaje)) {
+        echo "<p>$mensaje</p>";
+    }
+    ?>
     <form method="POST" action="">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required><br><br>
