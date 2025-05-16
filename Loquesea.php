@@ -93,7 +93,7 @@ $result = $conn->query($sql);
         <button type="submit" name="submit">Enviar</button>
     </form>
 
-    <form method="POST" action="">
+    <form method="POST" action="" class="descargar-xml">
         <button type="submit" name="download_xml">Descargar XML</button>
     </form>
 

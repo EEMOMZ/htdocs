@@ -29,6 +29,16 @@ form {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+form.descargar-xml {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: none;
+}
+
 form label {
     display: block;
     margin-bottom: 8px;
