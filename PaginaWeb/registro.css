@@ -1,0 +1,118 @@
+body {
+    background: #181c1b;
+    color: #e6ffe6;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.registro-container {
+    background: #232826;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    padding: 40px 32px 32px 32px;
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titulo-registro {
+    color: #aeea00;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+label {
+    color: #aeea00;
+    font-weight: 500;
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], select[name="genero"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 18px 0;
+    border: none;
+    border-radius: 6px;
+    background: #2d332f;
+    color: #e6ffe6;
+    font-size: 1em;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    outline: none;
+    transition: background 0.2s, box-shadow 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus, select[name="genero"]:focus {
+    background: #3b423c;
+    box-shadow: 0 0 0 2px #aeea00;
+}
+.mensaje {
+    color: #ff4a4a;
+    background: #232826;
+    border: 1px solid #aeea00;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+.form-registro .botones {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+.form-registro button,
+.btn-volver {
+    flex: 1;
+    padding: 12px;
+    background: linear-gradient(90deg, #aeea00 60%, #8fd400 100%);
+    color: #181c1b;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    margin-bottom: 0;
+}
+.form-registro button:hover,
+.btn-volver:hover {
+    background: linear-gradient(90deg, #c6ff4a 60%, #aeea00 100%);
+    color: #232826;
+}
+
+/* Mejora para input[type="date"] */
+input[type="date"]::-webkit-input-placeholder { color: #aeea00; }
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(60%) sepia(80%) saturate(500%) hue-rotate(40deg);
+    cursor: pointer;
+}
+input[type="date"]::-moz-placeholder { color: #aeea00; }
+input[type="date"]:focus {
+    background: #3b423c;
+    box-shadow: 0 0 0 2px #aeea00;
+    color: #e6ffe6;
+}
+
+/* Mejora para select[name="genero"] en todos los navegadores */
+select[name="genero"] {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='limegreen' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px 20px;
+    padding-right: 36px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Para Firefox: mejora la flecha del select */
+select[name="genero"]:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #e6ffe6;
+}
